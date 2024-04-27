@@ -12,19 +12,20 @@ public class Main {
         }
 
         System.out.println("Задание 2");
-        Set<Integer> numberSetEven = new HashSet<>();
+        Collections.sort(nums);
+        int pervNum = Integer.MIN_VALUE;
         for (int number : nums) {
-            if (number % 2 != 0) {
-                numberSetEven.add(number);
+            if (number % 2 == 0 && number!=pervNum) {
+                System.out.println(number);
+                pervNum = number;
             }
         }
-        System.out.println(numberSetEven);
+
 
         System.out.println("Задание 3");
 
         List<String> words = new ArrayList<>(List.of("Гусененок", "Утка", "Собака", "Ящерица", "Дикобраз", "Хомяк", "Гусененок", "Утка", "Собака", "Ящерица", "Дикобраз", "Хомяк"));
-        Set<String> uniqueWords = new HashSet<>();
-        uniqueWords.addAll(words);
+        Set<String> uniqueWords = new HashSet<>(words);
         System.out.println(uniqueWords);
 
         System.out.println("Задание 4");
